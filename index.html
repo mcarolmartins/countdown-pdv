@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contagem Regressiva para Ver o PDV</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f5f5f5;
+        padding: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      .countdown {
+        font-size: 2em;
+        margin: 20px 0;
+        color: #d32f2f;
+      }
+      .photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .photos img {
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Faltam...</h1>
+    <div class="countdown" id="countdown"></div>
+    <h2>...dias para ver o PDV 🥹❤️</h2>
+
+    <div class="photos">
+      <img src="f37ac8cd-b21a-4964-ac81-dc56c5e77e6f.png" alt="Foto 1" />
+      <img src="ca1582d0-71d3-4833-ab0b-8d8080af7a79.png" alt="Foto 2" />
+      <img src="2398870c-e7c8-4416-850d-0e83da043c22.png" alt="Foto 3" />
+    </div>
+
+    <script>
+      function updateCountdown() {
+        const targetDate = new Date('2025-08-19');
+        const today = new Date();
+        const timeDiff = targetDate - today;
+
+        const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+        document.getElementById('countdown').textContent = daysLeft + ' dias';
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000 * 60 * 60); // Atualiza a cada hora
+    </script>
+  </body>
+</html>
